@@ -64,6 +64,13 @@ CREATE TABLE comanda (
     valor_total DECIMAL(10,2) NOT NULL
 );
 
+-- VALIDADE
+CREATE TABLE validade (
+    id SERIAL PRIMARY KEY,
+    tipo_produto VARCHAR(30),
+    validade INT
+);
+
 -- PRODUTO
 CREATE TABLE produto (
     id SERIAL PRIMARY KEY,
@@ -104,13 +111,6 @@ CREATE TABLE produto_gaveta (
     gaveta_id INT REFERENCES gaveta(id) ON DELETE CASCADE,
     produto_id INT REFERENCES produto(id) ON DELETE CASCADE,
     PRIMARY KEY (gaveta_id, produto_id)
-);
-
--- VALIDADE
-CREATE TABLE validade (
-    id SERIAL PRIMARY KEY,
-    tipo_produto VARCHAR(30),
-    validade INT
 );
 
 -- TAXA_ENTREGA
