@@ -150,7 +150,7 @@ CREATE TABLE entregador_unidade (
 --ENTREGA
 CREATE TABLE entrega (
     comanda_id INT PRIMARY KEY REFERENCES comanda(id) ON DELETE CASCADE,
-    entregador_id INT REFERENCES entregador(id);
+    entregador_id INT REFERENCES entregador(id),
     logradouro VARCHAR(100),
     numero VARCHAR(10),
     complemento VARCHAR(50),
